@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -39,15 +38,78 @@ const generateManager = async () => {
   );
 };
 
-const generateEngineer = () => {
-  console.log("Engineer Generated");
+const generateEngineer = async () => {
+  const engineerQuestions = [
+    {
+      type: "input",
+      name: "engineerName",
+      message: "Enter the engineer's name:",
+    },
+    {
+      type: "input",
+      name: "engineerId",
+      message: "Enter the engineer's employee ID:",
+    },
+    {
+      type: "input",
+      name: "engineerEmail",
+      message: "Enter the engineer's e-mail address:",
+    },
+    {
+      type: "input",
+      name: "engineerGitHub",
+      message: "Enter the engineer's gitHub username:",
+    },
+  ];
+
+  const engineerObject = await inquirer.prompt(engineerQuestions);
+
+  return new Engineer(
+    engineerObject.engineerName,
+    engineerObject.engineerId,
+    engineerObject.engineerEmail,
+    engineerObject.engineerGitHub
+  );
 };
 
-const generateIntern = () => {
-  console.log("Intern generated");
+const generateIntern = async () => {
+  const internQuestions = [
+    {
+      type: "input",
+      name: "internName",
+      message: "Enter the intern's name:",
+    },
+    {
+      type: "input",
+      name: "internId",
+      message: "Enter the intern's employee ID:",
+    },
+    {
+      type: "input",
+      name: "internEmail",
+      message: "Enter the intern's e-mail address:",
+    },
+    {
+      type: "input",
+      name: "internSchool",
+      message: "Enter the intern's school:",
+    },
+  ];
+
+  const internObject = await inquirer.prompt(internQuestions);
+
+  return new Intern(
+    internObject.internName,
+    internObject.internId,
+    internObject.internEmail,
+    internObject.internSchool
+  );
 };
 
 const generateEmployees = async () => {
+  const engineersArray = [];
+  const internsArray = [];
+
   const employeesMenu = [
     {
       type: "list",
@@ -63,18 +125,21 @@ const generateEmployees = async () => {
     const employeesOptions = await inquirer.prompt(employeesMenu);
     if (employeesOptions.employeeChoices === "None") {
       isLooping = false;
-      console.log("Programme stopped");
     } else if (employeesOptions.employeeChoices === "Engineer") {
-      generateEngineer();
+      const newEngineer = await generateEngineer();
+      engineersArray.push(newEngineer);
     } else if (employeesOptions.employeeChoices === "Intern") {
-      generateIntern();
+      const newIntern = await generateIntern();
+      internsArray.push(newIntern);
     }
   }
+
+  return { engineersArray, internsArray };
 };
 
 const init = async () => {
   const manager = await generateManager();
-  const employees = generateEmployees();
+  const employees = await generateEmployees();
   generateHTML(manager, employees);
 };
 

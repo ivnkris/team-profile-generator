@@ -23,4 +23,19 @@ describe("Employee", () => {
     const bobName = bob.getName();
     expect(bobName).toBe(name);
   });
+
+  test("getId method should return employee's id", () => {
+    const bobId = bob.getId();
+    expect(bobId).toBe(id);
+  });
+
+  test("getEmail method should return employee's email", () => {
+    const bobEmail = bob.getEmail();
+    expect(bobEmail).toBe(email);
+  });
+
+  test("getRole method should return 'Employee'", () => {
+    const bobRole = bob.getRole();
+    expect(bobRole).toBe("Employee");
+  });
 });

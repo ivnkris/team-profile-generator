@@ -2,7 +2,7 @@ const Engineer = require("../lib/Engineer");
 
 describe("Engineer", () => {
   const name = "Paul";
-  const id = 1;
+  const id = 2;
   const email = "paul@company.co.uk";
   const gitHub = "github.com/paul";
   const paul = new Engineer(name, id, email, gitHub);

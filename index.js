@@ -31,10 +31,46 @@ const generateManager = async () => {
 
   const managerObject = await inquirer.prompt(managerQuestions);
 
-  return managerObject;
+  return new Manager(
+    managerObject.managerName,
+    managerObject.managerId,
+    managerObject.managerEmail,
+    managerObject.managerOfficeNumber
+  );
 };
 
-const generateEmployees = () => {};
+const generateEngineer = () => {
+  console.log("Engineer Generated");
+};
+
+const generateIntern = () => {
+  console.log("Intern generated");
+};
+
+const generateEmployees = async () => {
+  const employeesMenu = [
+    {
+      type: "list",
+      name: "employeeChoices",
+      choices: ["Engineer", "Intern", "None"],
+      message: "Select what other role you would like to add to your team:",
+    },
+  ];
+
+  let isLooping = true;
+
+  while (isLooping) {
+    const employeesOptions = await inquirer.prompt(employeesMenu);
+    if (employeesOptions.employeeChoices === "None") {
+      isLooping = false;
+      console.log("Programme stopped");
+    } else if (employeesOptions.employeeChoices === "Engineer") {
+      generateEngineer();
+    } else if (employeesOptions.employeeChoices === "Intern") {
+      generateIntern();
+    }
+  }
+};
 
 const init = async () => {
   const manager = await generateManager();

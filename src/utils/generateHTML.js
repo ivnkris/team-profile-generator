@@ -1,6 +1,3 @@
-const generateHTML = (managerObject, employeeObject) => {
-  console.log(managerObject);
-  console.log(employeeObject);
-};
+const generateHTML = (managerObject, employeeObject) => {};
 
 module.exports = generateHTML;

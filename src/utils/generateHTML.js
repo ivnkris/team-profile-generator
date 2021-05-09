@@ -1,8 +1,10 @@
 const fs = require("fs");
 
+// The main function that generates the index.html file from the information passed in via the managerObject and employeesObject
 const generateHTML = (managerObject, employeesObject) => {
   let employeeCards = "";
 
+  // Renders the manager card and adds the code to the employeeCards variable
   const renderManagerCard = () => {
     managerCard = `
   <div class="col">
@@ -28,6 +30,7 @@ const generateHTML = (managerObject, employeesObject) => {
     employeeCards += managerCard;
   };
 
+  // Renders an engineer card and adds the code to the employeeCards variable
   const renderEngineerCard = (engineer) => {
     engineerCard = `
     <div class="col">
@@ -58,6 +61,7 @@ const generateHTML = (managerObject, employeesObject) => {
     employeeCards += engineerCard;
   };
 
+  // Renders an intern card and adds the code to the employeeCards variable
   const renderInternCard = (intern) => {
     internCard = `
     <div class="col">
@@ -85,6 +89,7 @@ const generateHTML = (managerObject, employeesObject) => {
     employeeCards += internCard;
   };
 
+  // The main function to render all team member cards
   const renderCards = () => {
     renderManagerCard();
     employeesObject.engineersArray.forEach(renderEngineerCard);
@@ -93,6 +98,7 @@ const generateHTML = (managerObject, employeesObject) => {
 
   renderCards();
 
+  // Template HTML content
   htmlContent = `
   <!DOCTYPE html>
 <html lang="en">
@@ -130,6 +136,7 @@ const generateHTML = (managerObject, employeesObject) => {
 </html>
   `;
 
+  // Error handling function for fs.writeFile
   const errorHandling = (error) => {
     if (error) {
       console.error(error);
@@ -138,6 +145,7 @@ const generateHTML = (managerObject, employeesObject) => {
     }
   };
 
+  // Generates index.html
   fs.writeFile("./dist/index.html", htmlContent, errorHandling);
 };
 

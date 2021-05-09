@@ -4,6 +4,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const generateHTML = require("./src/utils/generateHTML");
 
+// Returns a new instance of the manager class with the prompted managerQuestions
 const generateManager = async () => {
   const managerQuestions = [
     {
@@ -38,6 +39,7 @@ const generateManager = async () => {
   );
 };
 
+// Returns a new instance of the engineer class with the prompted engineerQuestions
 const generateEngineer = async () => {
   const engineerQuestions = [
     {
@@ -72,6 +74,7 @@ const generateEngineer = async () => {
   );
 };
 
+// Returns a new instance of the intern class with the prompted internQuestions
 const generateIntern = async () => {
   const internQuestions = [
     {
@@ -106,6 +109,7 @@ const generateIntern = async () => {
   );
 };
 
+// Presents the menu once Manager has been created with the options to add nem team members or exit the application
 const generateEmployees = async () => {
   const engineersArray = [];
   const internsArray = [];
@@ -137,6 +141,7 @@ const generateEmployees = async () => {
   return { engineersArray, internsArray };
 };
 
+// The core function that generates index.html from the data in the manager and employees objects
 const init = async () => {
   const manager = await generateManager();
   const employees = await generateEmployees();

@@ -1,3 +1,5 @@
-const init = () => {};
-console.log("program started");
+const init = () => {
+  console.log("program started");
+};
+
 init();

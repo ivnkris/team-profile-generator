@@ -16,7 +16,7 @@ describe("Intern", () => {
   });
 
   test("new Intern instance's email should be set to passed in argument", () => {
-    expect(jack.id).toBe(id);
+    expect(jack.email).toBe(email);
   });
 
   test("new Intern instance's school should be set to passed in argument", () => {

@@ -15,7 +15,7 @@ describe("Employee", () => {
   });
 
   test("new Employee instance's email should be set to passed in argument", () => {
-    expect(bob.id).toBe(id);
+    expect(bob.email).toBe(email);
   });
 
   test("getName method should return employee's name", () => {

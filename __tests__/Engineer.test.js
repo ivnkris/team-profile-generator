@@ -16,7 +16,7 @@ describe("Engineer", () => {
   });
 
   test("new Engineer instance's email should be set to passed in argument", () => {
-    expect(paul.id).toBe(id);
+    expect(paul.email).toBe(email);
   });
 
   test("new Engineer instance's github should be set to passed in argument", () => {

@@ -26,6 +26,14 @@ npm test
 npm test:watch
 ```
 
+## Link to GitHub repository
+
+https://github.com/ivnkris/team-profile-generator
+
+## Link to walkthrough video
+
+https://drive.google.com/file/d/1l9QyGaMBbnlKo4h8c_O7j6vRu3Dmo3NK/view
+
 ## Questions
 
 - Send any questions via my [GitHub profile](https://github.com/ivnkris)

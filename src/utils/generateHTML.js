@@ -122,10 +122,8 @@ const generateHTML = (managerObject, employeesObject) => {
         </div>
       </nav>
     </header>
-    <main class="d-flex justify-content-center container-fluid">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+    <main class="container-fluid d-flex flex-wrap justify-content-center">
         ${employeeCards}
-      </div>
     </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"

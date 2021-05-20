@@ -21,6 +21,17 @@ const generateManager = async () => {
       type: "input",
       name: "managerEmail",
       message: "Enter the manager's e-mail address:",
+      validate: function (managerEmail) {
+        valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+          managerEmail
+        );
+        if (valid) {
+          return true;
+        } else {
+          console.log("\nPlease, enter a valid e-mail address");
+          return false;
+        }
+      },
     },
     {
       type: "input",
@@ -56,6 +67,17 @@ const generateEngineer = async () => {
       type: "input",
       name: "engineerEmail",
       message: "Enter the engineer's e-mail address:",
+      validate: function (engineerEmail) {
+        valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+          engineerEmail
+        );
+        if (valid) {
+          return true;
+        } else {
+          console.log("\nPlease, enter a valid e-mail address");
+          return false;
+        }
+      },
     },
     {
       type: "input",
@@ -91,6 +113,17 @@ const generateIntern = async () => {
       type: "input",
       name: "internEmail",
       message: "Enter the intern's e-mail address:",
+      validate: function (internEmail) {
+        valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+          internEmail
+        );
+        if (valid) {
+          return true;
+        } else {
+          console.log("\nPlease, enter a valid e-mail address");
+          return false;
+        }
+      },
     },
     {
       type: "input",

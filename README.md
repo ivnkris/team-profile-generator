@@ -37,6 +37,11 @@ https://github.com/ivnkris/team-profile-generator
 
 https://drive.google.com/file/d/1l9QyGaMBbnlKo4h8c_O7j6vRu3Dmo3NK/view
 
+## Screenshots
+
+![Screenshot from tests passing](./src/images/tests-passing.png)
+![Screenshot from programme running with generated HTML file](./src/images/programme-running.png)
+
 ## Questions
 
 - Send any questions via my [GitHub profile](https://github.com/ivnkris)

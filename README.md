@@ -7,7 +7,10 @@ In this project I have created an organisational chart generator that allows the
 ## Installation
 
 ```
-npm install inquirer
+git clone https://github.com/ivnkris/team-profile-generator.git
+cd team-profile-generator
+npm install
+node index.js
 ```
 
 ## Contributing

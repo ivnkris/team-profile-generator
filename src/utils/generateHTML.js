@@ -6,7 +6,7 @@ const generateHTML = (managerObject, employeesObject) => {
 
   // Renders the manager card and adds the code to the employeeCards variable
   const renderManagerCard = () => {
-    managerCard = `
+    const managerCard = `
   <div class="col">
           <div class="card m-3">
             <div class="card-header">
@@ -32,7 +32,7 @@ const generateHTML = (managerObject, employeesObject) => {
 
   // Renders an engineer card and adds the code to the employeeCards variable
   const renderEngineerCard = (engineer) => {
-    engineerCard = `
+    const engineerCard = `
     <div class="col">
             <div class="card m-3">
               <div class="card-header">
@@ -63,7 +63,7 @@ const generateHTML = (managerObject, employeesObject) => {
 
   // Renders an intern card and adds the code to the employeeCards variable
   const renderInternCard = (intern) => {
-    internCard = `
+    const internCard = `
     <div class="col">
             <div class="card m-3">
               <div class="card-header">
@@ -99,7 +99,7 @@ const generateHTML = (managerObject, employeesObject) => {
   renderCards();
 
   // Template HTML content
-  htmlContent = `
+  const htmlContent = `
   <!DOCTYPE html>
 <html lang="en">
   <head>
